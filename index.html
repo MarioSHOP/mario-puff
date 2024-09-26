@@ -4,72 +4,240 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mario Puff - Produits et Saveurs</title>
-    <script>
-        // Fonction pour afficher un message lors du clic sur un produit
-        function afficherProduit(nomProduit) {
-            alert("Vous avez sélectionné : " + nomProduit);
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        // Fonction pour afficher les prix en fonction de la quantité sélectionnée
-        function afficherPrix() {
-            let quantite = document.getElementById('quantite').value;
-            let prix;
-            if (quantite >= 10000) {
-                prix = "6,06€";
-            } else if (quantite >= 2000) {
-                prix = "6,28€";
-            } else if (quantite >= 500) {
-                prix = "6,55€";
-            } else if (quantite >= 200) {
-                prix = "6,80€";
-            } else {
-                prix = "Contactez-nous pour des quantités inférieures.";
-            }
-            document.getElementById('affichagePrix').innerText = "Le prix pour " + quantite + " pièces est : " + prix;
+        body {
+            background-color: #f4f4f9;
+            color: #333;
         }
-    </script>
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            color: #444;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .product-video {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .flavor-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flavor-item {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .flavor-item:hover {
+            transform: scale(1.05);
+        }
+
+        .flavor-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .price-section {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .price-section p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-list {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .shipping-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-buy:hover {
+            background-color: #218838;
+        }
+
+        .telegram-contact {
+            margin-top: 10px;
+        }
+
+        .telegram-contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .telegram-contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Bienvenue chez Mario Puff</h1>
+    <header>
+        <div class="container">
+            <h1>Mario Puff</h1>
+            <p>Découvrez nos produits et saveurs exclusifs</p>
+        </div>
+    </header>
 
-    <h2>Vidéo du produit</h2>
-    <video width="320" height="240" controls>
-        <source src="https://i.imgur.com/CTKXAsc.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la lecture de vidéo.
-    </video>
+    <div class="container">
 
-    <h2>Saveurs Disponibles</h2>
-    <ul>
-        <li onclick="afficherProduit('Watermelon Ice / Blueberry Mint')">Watermelon Ice / Blueberry Mint</li>
-        <li onclick="afficherProduit('Blueberry Raspberry / Mixed Mouldy Fruit')">Blueberry Raspberry / Mixed Mouldy Fruit</li>
-        <li onclick="afficherProduit('Strawberry Kiwi / Peach Ice')">Strawberry Kiwi / Peach Ice</li>
-        <li onclick="afficherProduit('Strawberry Kiwi / Sour Apple Raspberry')">Strawberry Kiwi / Sour Apple Raspberry</li>
-        <li onclick="afficherProduit('Watermelon Ice / Strawberry And Mango')">Watermelon Ice / Strawberry And Mango</li>
-        <li onclick="afficherProduit('Strawberry Watermelon / Kiwi Passion Fruit Guava')">Strawberry Watermelon / Kiwi Passion Fruit Guava</li>
-        <li onclick="afficherProduit('Strawberry And Watermelon / Grape Ice')">Strawberry And Watermelon / Grape Ice</li>
-        <li onclick="afficherProduit('Blueberry Ice / Black Dragon Ice')">Blueberry Ice / Black Dragon Ice</li>
-        <li onclick="afficherProduit('Blueberry Ice / Strawberry and Banana')">Blueberry Ice / Strawberry and Banana</li>
-        <li onclick="afficherProduit('Redbull / Blueberry Watermelon')">Redbull / Blueberry Watermelon</li>
-        <li onclick="afficherProduit('Redbull / Watermelon Bubble Candy')">Redbull / Watermelon Bubble Candy</li>
-        <li onclick="afficherProduit('Blueberry Raspberry / Peach Mango Watermelon')">Blueberry Raspberry / Peach Mango Watermelon</li>
-    </ul>
+        <section class="product-video">
+            <h2>Vidéo du produit</h2>
+            <video controls>
+                <source src="https://i.imgur.com/CTKXAsc.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </section>
 
-    <h2>Prix des Produits</h2>
-    <p>Entrez la quantité de produits que vous souhaitez commander :</p>
-    <input type="number" id="quantite" placeholder="Quantité" oninput="afficherPrix()">
-    <p id="affichagePrix">Le prix s'affichera ici en fonction de la quantité sélectionnée.</p>
+        <section class="flavor-section">
+            <h2>Saveurs Disponibles</h2>
+            <div class="flavor-list">
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/Zgh5DWW.jpeg" alt="Watermelon Ice / Blueberry Mint">
+                    <p>Watermelon Ice / Blueberry Mint</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/w3MQ09o.jpeg" alt="Blueberry Raspberry / Mixed Mouldy Fruit">
+                    <p>Blueberry Raspberry / Mixed Mouldy Fruit</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/8s3nEwE.jpeg" alt="Strawberry Kiwi / Peach Ice">
+                    <p>Strawberry Kiwi / Peach Ice</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/s72A7fW.jpeg" alt="Strawberry Kiwi / Sour Apple Raspberry">
+                    <p>Strawberry Kiwi / Sour Apple Raspberry</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/zb9WFPU.jpeg" alt="Watermelon Ice / Strawberry And Mango">
+                    <p>Watermelon Ice / Strawberry And Mango</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/gTedAEp.jpeg" alt="Strawberry Watermelon / Kiwi Passion Fruit Guava">
+                    <p>Strawberry Watermelon / Kiwi Passion Fruit Guava</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/a7rRzC9.jpeg" alt="Strawberry And Watermelon / Grape Ice">
+                    <p>Strawberry And Watermelon / Grape Ice</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/nvjOiem.jpeg" alt="Blueberry Ice / Black Dragon Ice">
+                    <p>Blueberry Ice / Black Dragon Ice</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/3Gg5YtZ.jpeg" alt="Blueberry Ice / Strawberry and Banana">
+                    <p>Blueberry Ice / Strawberry and Banana</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/bPh3r09.jpeg" alt="Redbull / Blueberry Watermelon">
+                    <p>Redbull / Blueberry Watermelon</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/8rWt8tX.jpeg" alt="Redbull / Watermelon Bubble Candy">
+                    <p>Redbull / Watermelon Bubble Candy</p>
+                </div>
+                <div class="flavor-item">
+                    <img src="https://i.imgur.com/BmRhpPX.jpeg" alt="Blueberry Raspberry / Peach Mango Watermelon">
+                    <p>Blueberry Raspberry / Peach Mango Watermelon</p>
+                </div>
+            </div>
+        </section>
 
-    <h2>Méthodes de Livraison</h2>
-    <p>Nous coopérons avec UPS/DHL/FEDEX/DPD pour assurer une livraison rapide et efficace.</p>
-    <img src="https://i.imgur.com/z5OqVz0.jpeg" alt="Méthodes de Livraison" width="300">
+        <section class="price-section">
+            <h2>Prix des Produits</h2>
+            <p>Commandez selon la quantité désirée :</p>
+            <ul class="price-list">
+                <li>200 pièces : 6,80€</li>
+                <li>500 pièces : 6,55€</li>
+                <li>2000 pièces : 6,28€</li>
+                <li>10000 pièces : 6,06€</li>
+            </ul>
+            <a class="btn-buy" href="https://buy.stripe.com/6oEaGXgnu77laY0dQR">Acheter maintenant via Stripe</a>
+        </section>
 
-    <h2>Acheter Maintenant</h2>
-    <p>Cliquez ci-dessous pour acheter directement via Stripe :</p>
-    <a href="https://buy.stripe.com/6oEaGXgnu77laY0dQR">Acheter sur Stripe</a>
+        <section class="shipping-section">
+            <h2>Méthodes de Livraison</h2>
+            <p>Nous travaillons avec UPS, DHL, FEDEX et d'autres services pour vous garantir une livraison rapide et sans souci. Nous gérons le dédouanement pour vous, sans frais supplémentaires.</p>
+            <img src="https://i.imgur.com/z5OqVz0.jpeg" alt="Méthodes de Livraison">
+        </section>
+
+    </div>
 
     <footer>
-        <p>Contactez-nous via Telegram pour toute question : <a href="https://t.me/mario0fficial">Mario Puff</a></p>
+        <div class="container">
+            <p>Pour toute question, contactez-nous via Telegram : <a href="https://t.me/mario0fficial">Mario Puff</a></p>
+        </div>
     </footer>
 
 </body>
