@@ -1,244 +1,120 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Puff - Produits et Saveurs</title>
+    <title>Mario Puff - 30,000 Puffs</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
         body {
-            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
             text-align: center;
         }
-
         h1 {
-            margin-bottom: 10px;
+            color: #4CAF50;
         }
-
-        h2 {
-            margin: 20px 0 10px;
-            color: #444;
-        }
-
-        p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: 80%;
             margin: 0 auto;
+            padding: 20px;
         }
-
-        .product-video {
-            text-align: center;
-            margin-bottom: 30px;
+        .flavors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
-
-        video {
-            width: 100%;
-            max-width: 500px;
-            border: 5px solid #ddd;
-            border-radius: 10px;
-        }
-
-        .flavor-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .flavor-item {
-            background-color: #fff;
-            padding: 15px;
+        .flavor {
+            width: 250px;
+            margin: 15px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
-
-        .flavor-item:hover {
-            transform: scale(1.05);
+        .flavor img {
+            width: 100%;
+            height: auto;
         }
-
-        .flavor-item img {
-            max-width: 100%;
-            border-radius: 5px;
+        .flavor h3 {
+            padding: 10px;
+            font-size: 18px;
+            color: #555;
         }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .price-section {
-            background-color: #eee;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-
-        .price-section p {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .price-list {
-            margin: 15px 0;
-            text-align: left;
-        }
-
-        .shipping-section img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .btn-buy {
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
+        .prices {
+            font-size: 18px;
             margin-top: 20px;
-            transition: background-color 0.3s;
         }
-
-        .btn-buy:hover {
-            background-color: #218838;
-        }
-
-        .telegram-contact {
-            margin-top: 10px;
-        }
-
-        .telegram-contact a {
-            color: #007bff;
+        a {
             text-decoration: none;
-        }
-
-        .telegram-contact a:hover {
-            text-decoration: underline;
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <h1>Mario Puff</h1>
-            <p>Découvrez nos produits et saveurs exclusifs</p>
-        </div>
-    </header>
-
     <div class="container">
-
-        <section class="product-video">
-            <h2>Vidéo du produit</h2>
-            <video controls>
-                <source src="https://i.imgur.com/CTKXAsc.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la vidéo.
-            </video>
-        </section>
-
-        <section class="flavor-section">
-            <h2>Saveurs Disponibles</h2>
-            <div class="flavor-list">
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/Zgh5DWW.jpeg" alt="Watermelon Ice / Blueberry Mint">
-                    <p>Watermelon Ice / Blueberry Mint</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/w3MQ09o.jpeg" alt="Blueberry Raspberry / Mixed Mouldy Fruit">
-                    <p>Blueberry Raspberry / Mixed Mouldy Fruit</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/8s3nEwE.jpeg" alt="Strawberry Kiwi / Peach Ice">
-                    <p>Strawberry Kiwi / Peach Ice</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/s72A7fW.jpeg" alt="Strawberry Kiwi / Sour Apple Raspberry">
-                    <p>Strawberry Kiwi / Sour Apple Raspberry</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/zb9WFPU.jpeg" alt="Watermelon Ice / Strawberry And Mango">
-                    <p>Watermelon Ice / Strawberry And Mango</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/gTedAEp.jpeg" alt="Strawberry Watermelon / Kiwi Passion Fruit Guava">
-                    <p>Strawberry Watermelon / Kiwi Passion Fruit Guava</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/a7rRzC9.jpeg" alt="Strawberry And Watermelon / Grape Ice">
-                    <p>Strawberry And Watermelon / Grape Ice</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/nvjOiem.jpeg" alt="Blueberry Ice / Black Dragon Ice">
-                    <p>Blueberry Ice / Black Dragon Ice</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/3Gg5YtZ.jpeg" alt="Blueberry Ice / Strawberry and Banana">
-                    <p>Blueberry Ice / Strawberry and Banana</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/bPh3r09.jpeg" alt="Redbull / Blueberry Watermelon">
-                    <p>Redbull / Blueberry Watermelon</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/8rWt8tX.jpeg" alt="Redbull / Watermelon Bubble Candy">
-                    <p>Redbull / Watermelon Bubble Candy</p>
-                </div>
-                <div class="flavor-item">
-                    <img src="https://i.imgur.com/BmRhpPX.jpeg" alt="Blueberry Raspberry / Peach Mango Watermelon">
-                    <p>Blueberry Raspberry / Peach Mango Watermelon</p>
-                </div>
+        <h1>Mario Puff - 30,000 Puffs</h1>
+        <p>Explore our selection of flavors and make your order by clicking on the images below.</p>
+        
+        <div class="flavors">
+            <div class="flavor">
+                <a href="https://buy.stripe.com/7sI7uL6MU4Zdd68cMM"><img src="https://i.imgur.com/Zgh5DWW.jpeg" alt="Flavor 1"></a>
+                <h3>Flavor 1: Watermelon Ice / Blueberry Mint</h3>
             </div>
-        </section>
-
-        <section class="price-section">
-            <h2>Prix des Produits</h2>
-            <p>Commandez selon la quantité désirée :</p>
-            <ul class="price-list">
-                <li>200 pièces : 6,80€</li>
-                <li>500 pièces : 6,55€</li>
-                <li>2000 pièces : 6,28€</li>
-                <li>10000 pièces : 6,06€</li>
-            </ul>
-            <a class="btn-buy" href="https://buy.stripe.com/6oEaGXgnu77laY0dQR">Acheter maintenant via Stripe</a>
-        </section>
-
-        <section class="shipping-section">
-            <h2>Méthodes de Livraison</h2>
-            <p>Nous travaillons avec UPS, DHL, FEDEX et d'autres services pour vous garantir une livraison rapide et sans souci. Nous gérons le dédouanement pour vous, sans frais supplémentaires.</p>
-            <img src="https://i.imgur.com/z5OqVz0.jpeg" alt="Méthodes de Livraison">
-        </section>
-
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>Pour toute question, contactez-nous via Telegram : <a href="https://t.me/mario0fficial">Mario Puff</a></p>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/6oEaGXgnu77laY0dQR"><img src="https://i.imgur.com/w3MQ09o.jpeg" alt="Flavor 2"></a>
+                <h3>Flavor 2: Blueberry Raspberry / Mixed Mouldy Fruit</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/8wMcP5dbi1N13vyfZ0"><img src="https://i.imgur.com/8s3nEwE.jpeg" alt="Flavor 3"></a>
+                <h3>Flavor 3: Strawberry Kiwi / Peach Ice</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/bIY3ev5IQdvJ8PS5kn"><img src="https://i.imgur.com/s72A7fW.jpeg" alt="Flavor 4"></a>
+                <h3>Flavor 4: Strawberry Kiwi / Sour Apple Raspberry</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/dR64iz5IQ0IX7LOaEI"><img src="https://i.imgur.com/zb9WFPU.jpeg" alt="Flavor 5"></a>
+                <h3>Flavor 5: Watermelon Ice / Strawberry And Mango</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/9AQ9CT2wEfDR8PSbIN"><img src="https://i.imgur.com/gTedAEp.jpeg" alt="Flavor 6"></a>
+                <h3>Flavor 6: Strawberry Watermelon / Kiwi Passion Fruit Guava</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/14k6qHc7e2R52ruaEK"><img src="https://i.imgur.com/a7rRzC9.jpeg" alt="Flavor 7"></a>
+                <h3>Flavor 7: Strawberry And Watermelon / Grape Ice</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/cN29CTefm9ft3vy9AH"><img src="https://i.imgur.com/nvjOiem.jpeg" alt="Flavor 8"></a>
+                <h3>Flavor 8: Blueberry Ice / Black Dragon Ice</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/aEU2ar4EMcrF4zC8wE"><img src="https://i.imgur.com/3Gg5YtZ.jpeg" alt="Flavor 9"></a>
+                <h3>Flavor 9: Blueberry Ice / Strawberry and Banana</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/cN29CTc7ebnBeac7sB"><img src="https://i.imgur.com/bPh3r09.jpeg" alt="Flavor 10"></a>
+                <h3>Flavor 10: Redbull / Blueberry Watermelon</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/7sIaGX0owajxfeg8wG"><img src="https://i.imgur.com/8rWt8tX.jpeg" alt="Flavor 11"></a>
+                <h3>Flavor 11: Redbull / Watermelon Bubble Candy</h3>
+            </div>
+            <div class="flavor">
+                <a href="https://buy.stripe.com/7sI5mD7QYajx4zC00b"><img src="https://i.imgur.com/BmRhpPX.jpeg" alt="Flavor 12"></a>
+                <h3>Flavor 12: Blueberry Raspberry / Peach Mango Watermelon</h3>
+            </div>
         </div>
-    </footer>
-
+        
+        <div class="prices">
+            <h2>Prices for 30,000 Puffs</h2>
+            <p>200 - 499 pcs. ➡️ 7.19€</p>
+            <p>500 - 1.9k pcs. ➡️ 6.89€</p>
+            <p>2k - 9.9k pcs. ➡️ 6.31€</p>
+            <p>Over 10k pcs. ➡️ 6.06€</p>
+        </div>
+    </div>
 </body>
 </html>
